@@ -11,4 +11,36 @@ function MeetupDetailsPage() {
   );
 }
 
+// export async function getStaticPaths() {
+//   return {
+//     fallback: true,
+//     paths: [
+//       {
+//         params: {
+//           meetupId: "m1",
+//         }
+//       },
+//       {
+//         params: {
+//           meetupId: "m2",
+//         }
+//       },
+//       {
+//         params: {
+//           meetupId: "m3",
+//         }
+//       }
+//     ]
+//   }
+// }
+
+// export const getStaticProps = async () => {
+//   return {
+//     props: {
+//       meetups: DUMMY_MEETUPS,
+//     },
+//     revalidate: 3600
+//   };
+// };
+
 export default MeetupDetailsPage;
