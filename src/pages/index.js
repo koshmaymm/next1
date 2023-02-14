@@ -1,8 +1,16 @@
 import { MongoClient } from "mongodb";
+import Head from "next/head";
 import MeetupList from "@/app/components/meetups/MeetupList";
 
 const HomePage = (props) => {
-  return <MeetupList meetups={props.meetups} />;
+  return (
+    <>
+      <Head>
+        <title>Meetups</title>
+      </Head>
+      <MeetupList meetups={props.meetups} />
+    </>
+  );
 };
 
 // export const getServerSideProps = async (context) => {
@@ -25,11 +33,11 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      meetups: meetups.map(meetup => ({
+      meetups: meetups.map((meetup) => ({
         title: meetup.title,
         address: meetup.address,
         image: meetup.image,
-        id: meetup._id.toString()
+        id: meetup._id.toString(),
       })),
     },
     revalidate: 3600,

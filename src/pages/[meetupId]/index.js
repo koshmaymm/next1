@@ -1,14 +1,20 @@
 import { MongoClient, ObjectId } from "mongodb";
+import Head from "next/head";
 import MeetupDetail from "@/app/components/meetups/MeetupDetail";
 
 const MeetupDetailsPage = ({ meetupData }) => {
   return (
-    <MeetupDetail
-      img={meetupData.image}
-      title={meetupData.title}
-      address={meetupData.address}
-      description={meetupData.description}
-    />
+    <>
+      <Head>
+        <title>{"Meetup " + meetupData.title}</title>
+      </Head>
+      <MeetupDetail
+        img={meetupData.image}
+        title={meetupData.title}
+        address={meetupData.address}
+        description={meetupData.description}
+      />
+    </>
   );
 };
 
