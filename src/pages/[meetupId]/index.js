@@ -41,7 +41,12 @@ export const getStaticProps = async (context) => {
 
   return {
     props: {
-      meetupData: JSON.parse(JSON.stringify(selectedMeetup)),
+      meetupData: JSON.parse(
+        JSON.stringify({
+          ...selectedMeetup,
+          id: selectedMeetup._id,
+        })
+      ),
     },
   };
 };
